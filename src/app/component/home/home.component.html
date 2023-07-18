@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Todo App</h2>
+  <div class="form-group">
+    <label for="task">Task</label>
+    <input type="text"  class="form-control" [(ngModel)]="tasks" (keyup.enter)="addTask()" placeholder="Enter your task">
+  </div>
+<br><br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Task</th>
+      <th scope="col">Completed</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos | async">
+      <td>{{ todo.name }}</td>
+      <td><input [checked]="!todo.completed" (change)="checked(todo)" class="checkbox" type="checkbox" ></td>
+
+      <td><button (click)="deleteTask(todo)"  type="delete" class="btn btn-danger" [disabled]="todo.completed">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
