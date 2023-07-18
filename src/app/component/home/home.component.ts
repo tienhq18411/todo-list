@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit {
   checked(todo: Todo) {
     this.todoService.checked(todo).subscribe(() => {
       if (todo.completed) {
-        // Nếu todo đã hoàn thành, chờ một lúc và sau đó xoá todo
          this.deleteTask(todo);
       }
     });
