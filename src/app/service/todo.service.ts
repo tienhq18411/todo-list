@@ -1,55 +1,3 @@
-// import { Injectable } from '@angular/core';
-// import { Observable, of } from 'rxjs';
-
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class TodoService {
-// private todos: string[] = [];
-
-
-//   constructor(){
-//     const storedTodos = localStorage.getItem('todos');
-//     if (storedTodos) {
-//       this.todos = JSON.parse(storedTodos);
-//     }
-//   }
-//   private saveToLocalStorage(): void {
-//     localStorage.setItem('todos', JSON.stringify(this.todos));
-//   }
-
-//   getTodos(): Observable<string[]> {
-//     return of(this.todos);
-//   }
-
-//   addTodo(todo: string): Observable<string[]> {
-//     if (todo.trim() !== '') {
-//       this.todos.push(todo);
-//       this.saveToLocalStorage();
-//     }
-//     return of(this.todos);
-//   }
-
-//   updateTodo(index: number, todo: string): Observable<string[]> {
-//     if (index >= 0 && index < this.todos.length) {
-//       this.todos[index] = todo;
-//       this.saveToLocalStorage();
-//     }
-//     return of(this.todos);
-//   }
-
-//   deleteTodo(index: number): Observable<string[]> {
-//     if (index >= 0 && index < this.todos.length) {
-//       this.todos.splice(index, 1);
-//       this.saveToLocalStorage();
-//     }
-//     return of(this.todos);
-//   }
-
-// }
-
-
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -63,7 +11,7 @@ export interface Todo {
   providedIn: 'root'
 })
 export class TodoService {
-  private todos: Todo[] = []; // Sử dụng kiểu dữ liệu Todo[] thay vì boolean[]
+  private todos: Todo[] = []; 
 
   constructor() {
     const storedTodos = localStorage.getItem('todos');
