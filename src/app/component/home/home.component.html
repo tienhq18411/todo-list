@@ -17,9 +17,9 @@
   <tbody>
     <tr *ngFor="let todo of todos | async">
       <td>{{ todo.name }}</td>
-      <td><input [checked]="!todo.completed" (change)="checked(todo)" class="checkbox" type="checkbox" ></td>
+      <td><input [checked]="todo.completed" (change)="checked(todo)" class="checkbox" type="checkbox" ></td>
 
-      <td><button (click)="deleteTask(todo)"  type="delete" class="btn btn-danger" [disabled]="todo.completed">Delete</button>
+      <td><button (click)="deleteTask(todo)"  type="delete" class="btn btn-danger" [disabled]="!todo.completed">Delete</button>
       </td>
     </tr>
   </tbody>
